@@ -16,7 +16,7 @@ object Form1: TForm1
   object Label1: TLabel
     Left = 56
     Top = 8
-    Width = 185
+    Width = 173
     Height = 13
     Caption = #1056#1072#1089#1095#1077#1090' '#1082#1086#1083#1083#1080#1095#1077#1089#1090#1074#1072' '#1089#1083#1086#1074' '#1074' '#1092#1072#1081#1083#1077
     Layout = tlCenter
@@ -31,7 +31,7 @@ object Form1: TForm1
   object Label3: TLabel
     Left = 179
     Top = 64
-    Width = 205
+    Width = 198
     Height = 63
   end
   object Edit1: TEdit
@@ -56,5 +56,6 @@ object Form1: TForm1
     Height = 25
     Caption = #1047#1072#1074#1077#1088#1096#1080#1090#1100
     TabOrder = 2
+    OnClick = Button2Click
   end
 end

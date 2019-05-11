@@ -3,7 +3,8 @@ unit words;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
 
 type
@@ -14,7 +15,7 @@ type
     Button2: TButton;
     Label2: TLabel;
     Label3: TLabel;
-    procedure Label1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -28,7 +29,9 @@ implementation
 
 {$R *.dfm}
 
-
-
+procedure TForm1.Button2Click(Sender: TObject);
+begin
+  Form1.Close;
+end;
 
 end.
