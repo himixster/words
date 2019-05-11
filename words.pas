@@ -7,6 +7,7 @@ uses
   System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
 
+
 type
   TForm1 = class(TForm)
     Label1: TLabel;
@@ -16,6 +17,7 @@ type
     Label2: TLabel;
     Label3: TLabel;
     procedure Button2Click(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -28,6 +30,14 @@ var
 implementation
 
 {$R *.dfm}
+
+uses my_words;
+
+procedure TForm1.Button1Click(Sender: TObject);
+
+begin
+  mywords;
+end;
 
 procedure TForm1.Button2Click(Sender: TObject);
 begin
