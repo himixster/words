@@ -15,9 +15,11 @@ type
     Button1: TButton;
     Button2: TButton;
     Label2: TLabel;
-    Label3: TLabel;
+    Memo1: TMemo;
+    Button3: TButton;
     procedure Button2Click(Sender: TObject);
     procedure Button1Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -42,6 +44,12 @@ end;
 procedure TForm1.Button2Click(Sender: TObject);
 begin
   Form1.Close;
+end;
+
+procedure TForm1.Button3Click(Sender: TObject);
+
+begin
+Memo1.Lines.Loadfromfile('111.txt');
 end;
 
 end.
