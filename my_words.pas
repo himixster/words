@@ -15,23 +15,23 @@ var
   S, Sw: AnsiString;
   i, Len, LenW, Cnt: Integer;
 begin
-  S := AnsiUpperCase(form1.Memo1.Text);   //Текст из файла
-  Sw := AnsiUpperCase(form1.Edit1.Text);  //Введенное слово
+  S := AnsiUpperCase(form1.Memo1.Text);   //Tekst iz fai`la
+  Sw := AnsiUpperCase(form1.Edit1.Text);  //Vvedennoe slovo
   Len := Length(S);
-  LenW := 0;   //Длина счередного слова
-  Cnt := 0;    //Колличество слов совпадающее с введенным
+  LenW := 0;   //Dlina scherednogo slova
+  Cnt := 0;    //Kollichestvo slov sovpadaiushchee s vvedenny`m
   for i := 1 to Len do
-  //Если символ не является разделителем
+  //Esli simvol ne iavliaetsia razdelitelem
     if not(S[i] in D) then begin
-    //Учитываем очередной символ в длине слова
+    //Uchity`vaem ocherednoi` simvol v dline slova
       Inc(LenW);
-      //определение конца слова
+      //opredelenie kontca slova
       if (i = Len) or (S[i + 1] in D) then
       begin
-      //сверяем введенное слово с текущим
+      //sveriaem vvedennoe slovo s tekushchim
         if Sw = AnsiUpperCase(Copy(S, i - LenW + 1, LenW)) then
           Inc(Cnt);
-          //сброс длины слова
+          //sbros dliny` slova
         LenW := 0;
       end;
 
