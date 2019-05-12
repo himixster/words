@@ -15,8 +15,9 @@ type
     Button1: TButton;
     Button2: TButton;
     Label2: TLabel;
-    Memo1: TMemo;
     Button3: TButton;
+    Memo1: TMemo;
+    Memo2: TMemo;
     procedure Button2Click(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);

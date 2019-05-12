@@ -57,9 +57,7 @@ object Form1: TForm1
     Left = 176
     Top = 34
     Width = 585
-    Height = 415
-    Lines.Strings = (
-      'Memo1')
+    Height = 263
     TabOrder = 3
   end
   object Button3: TButton
@@ -70,5 +68,12 @@ object Form1: TForm1
     Caption = #1047#1072#1075#1088#1091#1079#1080#1090#1100' '#1090#1077#1082#1089#1090#1086#1074#1099#1081' '#1092#1072#1081#1083
     TabOrder = 4
     OnClick = Button3Click
+  end
+  object Memo2: TMemo
+    Left = 176
+    Top = 352
+    Width = 585
+    Height = 129
+    TabOrder = 5
   end
 end
