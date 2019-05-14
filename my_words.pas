@@ -15,6 +15,7 @@ var
   S, Sw: AnsiString;
   i, Len, LenW, Cnt: Integer;
 begin
+
   S := AnsiUpperCase(form1.Memo1.Text);   //Текст из файла
   Sw := AnsiUpperCase(form1.Edit1.Text);  //Введенное слово
   Len := Length(S);
@@ -32,6 +33,7 @@ begin
         if Sw = AnsiUpperCase(Copy(S, i - LenW + 1, LenW)) then
           Inc(Cnt);
           //сброс длины слова
+
         LenW := 0;
       end;
 
