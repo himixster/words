@@ -1,4 +1,4 @@
-unit words;
+﻿unit words;
 
 interface
 
@@ -6,7 +6,6 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
   System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
-
 
 type
   TForm1 = class(TForm)
@@ -40,6 +39,8 @@ procedure TForm1.Button1Click(Sender: TObject);
 
 begin
   mywords;
+  Memo2.Text := 'Введенное слово: ' + Sw;
+  Memo2.Lines.Add('Найдено слов:' + IntToStr(Cnt));
 end;
 
 procedure TForm1.Button2Click(Sender: TObject);
@@ -50,7 +51,8 @@ end;
 procedure TForm1.Button3Click(Sender: TObject);
 
 begin
-Memo1.Lines.Loadfromfile('111.txt');
+  Memo1.Lines.Loadfromfile('111.txt');
+
 end;
 
 end.
