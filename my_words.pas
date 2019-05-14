@@ -12,7 +12,7 @@ procedure mywords;
 const
   D = ['.', ',', ':', ';', '!', '?', '-', ' ', #9, #10, #13];
 var
-  S, Sw: AnsiString;
+  S, Sw: String;
   i, Len, LenW, Cnt: Integer;
 begin
 
