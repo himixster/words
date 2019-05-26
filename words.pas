@@ -20,6 +20,7 @@ type
     procedure Button2Click(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
+
   private
     { Private declarations }
   public
@@ -28,6 +29,10 @@ type
 
 var
   Form1: TForm1;
+  pathToFile:String;
+  wordToSearch:String;
+  Cnt: Integer;
+
 
 implementation
 
@@ -38,9 +43,13 @@ uses my_words;
 procedure TForm1.Button1Click(Sender: TObject);
 
 begin
-  mywords;
-  Memo2.Text := 'Введенное слово: ' + Sw;
-  Memo2.Lines.Add('Найдено слов:' + IntToStr(Cnt));
+  pathToFile := Memo1.Text;
+  wordToSearch :=  Edit1.Text;
+  wordsCount(pathToFile, wordToSearch);
+
+  Memo2.Text := 'Введенное слово: ' + wordToSearch;
+   Memo2.Lines.Add('Найдено слов:' + IntToStr(Cnt));
+
 end;
 
 procedure TForm1.Button2Click(Sender: TObject);
