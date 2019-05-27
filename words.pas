@@ -29,10 +29,6 @@ type
 
 var
   Form1: TForm1;
-  pathToFile:String;
-  wordToSearch:String;
-  Cnt: Integer;
-
 
 implementation
 
@@ -41,14 +37,17 @@ implementation
 uses my_words;
 
 procedure TForm1.Button1Click(Sender: TObject);
-
+var
+  pathToFile: String;
+  wordToSearch: String;
+  Cnt: Integer;
+  S : AnsiString;
 begin
-  pathToFile := Memo1.Text;
-  wordToSearch :=  Edit1.Text;
+  pathToFile := ParamStr(0);
+  wordToSearch := Edit1.Text;
   wordsCount(pathToFile, wordToSearch);
-
   Memo2.Text := 'Введенное слово: ' + wordToSearch;
-   Memo2.Lines.Add('Найдено слов:' + IntToStr(Cnt));
+//  Memo2.Lines.Add('Найдено слов:' + IntToStr(Cnt));
 
 end;
 

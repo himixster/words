@@ -15,29 +15,27 @@ var
   S, Sw: AnsiString;
   i, Len, LenW, Cnt: Integer;
 begin
-
-  pathToFile := AnsiUpperCase(pathToFile);
+  S := ExtractFilePath(pathToFile) + '111.txt';
+  S := AnsiUpperCase(S);
   wordToSearch := AnsiUpperCase(wordToSearch);
-  Len := Length(pathToFile);
+  Len := Length(S);
   LenW := 0;
   Cnt := 0;
   for i := 1 to Len do
-    if not(pathToFile[i] in D) then
+    if not(S[i] in D) then
     begin
       Inc(LenW);
-      if (i = Len) or (pathToFile[i + 1] in D) then
+      if (i = Len) or (S[i + 1] in D) then
       begin
-        if wordToSearch = AnsiUpperCase(Copy(pathToFile, i - LenW + 1, LenW)) then
+        if wordToSearch = AnsiUpperCase(Copy(S, i - LenW + 1, LenW)) then
           Inc(Cnt);
         LenW := 0;
       end;
 
     end;
-//    form1.Memo2.Text := 'Введенное слово: ' + Sw;
-//    form1.Memo2.Lines.Add('Найдено слов:' + IntToStr(Cnt));
+  // form1.Memo2.Text := 'Введенное слово: ' + Sw;
+//   form1.Memo2.Lines.Add('Найдено слов:' + IntToStr(Cnt));
 
 end;
 
-
 end.
-
