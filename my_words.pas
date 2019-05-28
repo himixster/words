@@ -2,27 +2,28 @@
 
 interface
 
-var
-  S, Sw: String;
-  Cnt: Integer;
-procedure mywords;
+function wordsCount(pathToFile: String; wordToSearch: String): Integer;
 
 implementation
 
-uses System.SysUtils, words;
+uses words, System.SysUtils, System.Classes;
 
-procedure mywords;
+function wordsCount(pathToFile: String; wordToSearch: String): Integer;
 const
   D = ['.', ',', ':', ';', '!', '?', '-', ' ', #9, #10, #13];
 var
-  i, Len, LenW: Integer;
+  S, Sw: AnsiString;
+  i, Len, LenW, Cnt: Integer;
+  strl: TStringList;
 begin
-
-  S := AnsiUpperCase(form1.Memo1.Text); // Текст из файла
-  Sw := AnsiUpperCase(form1.Edit1.Text); // Введенное слово
+  strl :=TStringList.Create;  //Создается объект типа TSTringList
+  strl.LoadFromFile('111.txt');
+  S := strl.Text;
+  S := AnsiUpperCase(s); // Текст из файла
+  wordToSearch := AnsiUpperCase(wordToSearch); // Введенное слово
   Len := Length(S);
   LenW := 0; // Длина счередного слова
-  Cnt := 0; // Колличество слов совпадающее с введенным
+  Result := 0; // Колличество слов совпадающее с введенным
   for i := 1 to Len do
     // Если символ не является разделителем
     if not(S[i] in D) then
@@ -33,17 +34,13 @@ begin
       if (i = Len) or (S[i + 1] in D) then
       begin
         // сверяем введенное слово с текущим
-        if Sw = AnsiUpperCase(Copy(S, i - LenW + 1, LenW)) then
-          Inc(Cnt);
+        if wordToSearch = AnsiUpperCase(Copy(S, i - LenW + 1, LenW)) then
+          Inc(Result);
         // сброс длины слова
-
         LenW := 0;
       end;
 
     end;
-  // form1.Memo2.Text := 'Введенное слово: ' + Sw;
-  // form1.Memo2.Lines.Add('Найдено слов:' + IntToStr(Cnt));
-
 end;
 
 end.
