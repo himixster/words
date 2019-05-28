@@ -41,13 +41,12 @@ var
   pathToFile: String;
   wordToSearch: String;
   Cnt: Integer;
-  S : AnsiString;
 begin
   pathToFile := ParamStr(0);
   wordToSearch := Edit1.Text;
-  wordsCount(pathToFile, wordToSearch);
+  Cnt :=  wordsCount(pathToFile, wordToSearch);
   Memo2.Text := 'Введенное слово: ' + wordToSearch;
-//  Memo2.Lines.Add('Найдено слов:' + IntToStr(Cnt));
+  Memo2.Lines.Add('Найдено слов:' + IntToStr(Cnt));
 
 end;
 

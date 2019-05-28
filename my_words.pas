@@ -2,40 +2,45 @@
 
 interface
 
-function wordsCount(pathToFile: String; wordToSearch: String): String;
+function wordsCount(pathToFile: String; wordToSearch: String): Integer;
 
 implementation
 
-uses words, System.SysUtils;
+uses words, System.SysUtils, System.Classes;
 
-function wordsCount(pathToFile: String; wordToSearch: String): String;
+function wordsCount(pathToFile: String; wordToSearch: String): Integer;
 const
   D = ['.', ',', ':', ';', '!', '?', '-', ' ', #9, #10, #13];
 var
   S, Sw: AnsiString;
   i, Len, LenW, Cnt: Integer;
+  strl: TStringList;
 begin
-  S := ExtractFilePath(pathToFile) + '111.txt';
-  S := AnsiUpperCase(S);
-  wordToSearch := AnsiUpperCase(wordToSearch);
+  strl :=TStringList.Create;  //Создается объект типа TSTringList
+  strl.LoadFromFile('111.txt');
+  S := strl.Text;
+  S := AnsiUpperCase(s); // Текст из файла
+  wordToSearch := AnsiUpperCase(wordToSearch); // Введенное слово
   Len := Length(S);
-  LenW := 0;
-  Cnt := 0;
+  LenW := 0; // Длина счередного слова
+  Result := 0; // Колличество слов совпадающее с введенным
   for i := 1 to Len do
+    // Если символ не является разделителем
     if not(S[i] in D) then
     begin
+      // Учитываем очередной символ в длине слова
       Inc(LenW);
+      // определение конца слова
       if (i = Len) or (S[i + 1] in D) then
       begin
+        // сверяем введенное слово с текущим
         if wordToSearch = AnsiUpperCase(Copy(S, i - LenW + 1, LenW)) then
-          Inc(Cnt);
+          Inc(Result);
+        // сброс длины слова
         LenW := 0;
       end;
 
     end;
-  // form1.Memo2.Text := 'Введенное слово: ' + Sw;
-//   form1.Memo2.Lines.Add('Найдено слов:' + IntToStr(Cnt));
-
 end;
 
 end.
