@@ -17,7 +17,7 @@ var
   strl: TStringList;
 begin
   strl := TStringList.Create; // Создается объект типа TSTringList
-  strl.LoadFromFile(pathToFile + '111.txt');
+  strl.LoadFromFile(pathToFile + '/111.txt');
   S := strl.Text;
   S := AnsiUpperCase(S); // Текст из файла
   wordToSearch := AnsiUpperCase(wordToSearch); // Введенное слово
@@ -41,7 +41,7 @@ begin
       end;
 
     end;
-    strl.free;
+  strl.free;
 end;
 
 end.
