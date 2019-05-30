@@ -16,10 +16,10 @@ var
   i, Len, LenW, Cnt: Integer;
   strl: TStringList;
 begin
-  strl :=TStringList.Create;  //Создается объект типа TSTringList
+  strl := TStringList.Create; // Создается объект типа TSTringList
   strl.LoadFromFile('111.txt');
   S := strl.Text;
-  S := AnsiUpperCase(s); // Текст из файла
+  S := AnsiUpperCase(S); // Текст из файла
   wordToSearch := AnsiUpperCase(wordToSearch); // Введенное слово
   Len := Length(S);
   LenW := 0; // Длина счередного слова
@@ -41,6 +41,7 @@ begin
       end;
 
     end;
+    strl.free;
 end;
 
 end.
