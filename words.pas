@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
   System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, FileCtrl;
 
 type
   TForm1 = class(TForm)
@@ -42,7 +42,7 @@ var
   wordToSearch: String;
   Cnt: Integer;
 begin
-  pathToFile := ParamStr(0);
+  SelectDirectory('Укажите путь к файлу', ':\', pathToFile);
   wordToSearch := Edit1.Text;
   Cnt :=  wordsCount(pathToFile, wordToSearch);
   Memo2.Text := 'Введенное слово: ' + wordToSearch;
