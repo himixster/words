@@ -6,7 +6,7 @@ function wordsCount(pathToFile: String; wordToSearch: String): Integer;
 
 implementation
 
-uses words, System.SysUtils, System.Classes;
+uses System.SysUtils, System.Classes;
 
 function wordsCount(pathToFile: String; wordToSearch: String): Integer;
 const
