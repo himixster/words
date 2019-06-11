@@ -15,10 +15,15 @@ var
   S, Sw: String;
   i, Len, LenW, Cnt: Integer;
   strl: TStringList;
+  FText: TFileStream;
 begin
   strl := TStringList.Create; // Создается объект типа TSTringList
   strl.LoadFromFile(pathToFile + '/111.txt');
-  S := strl.Text;
+
+  FText :=  TFileStream.Create();
+
+
+  //  S := strl.Text;
   S := AnsiUpperCase(S); // Текст из файла
   wordToSearch := AnsiUpperCase(wordToSearch); // Введенное слово
   Len := Length(S);
