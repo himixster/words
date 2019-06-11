@@ -12,7 +12,7 @@ function wordsCount(pathToFile: String; wordToSearch: String): Integer;
 const
   D = ['.', ',', ':', ';', '!', '?', '-', ' ', #9, #10, #13];
 var
-  S, Sw: AnsiString;
+  S, Sw: String;
   i, Len, LenW, Cnt: Integer;
   strl: TStringList;
 begin
